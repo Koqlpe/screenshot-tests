@@ -12,13 +12,13 @@ import java.util.logging.Logger;
 
 public class ScrenshotsComparer {
     private static final Logger logger = Logger.getLogger(Screenshoter.class.getName());
-    private static String pathToDiffScreenshots = "src/main/resources/screenshots/diff/"; // Путь к скриншотам с различиями
+    private static final String pathToDiffScreenshots = "src/main/resources/screenshots/diff/"; // Путь к скриншотам с различиями
     private static ImageDiff diff;
     private static int diffSizeTrigger = 10;
 
     public static boolean compareScreenshots(String fileName, int allowableDiff) {
-        Screenshot expected = Screenshoter.getExpectedScreenshot(fileName);
-        Screenshot actual = Screenshoter.getActualScreenshot(fileName);
+        Screenshot expected = Screenshoter.getExpectedScreenshot();
+        Screenshot actual = Screenshoter.getActualScreenshot();
 
         diff = new ImageDiffer().makeDiff(expected, actual).withDiffSizeTrigger(diffSizeTrigger);
         int diffSize = diff.getDiffSize();

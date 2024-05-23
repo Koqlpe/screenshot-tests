@@ -163,11 +163,11 @@ public class Screenshoter {
         }
     }
 
-    public static Screenshot getActualScreenshot(String fileName)
+    public static Screenshot getActualScreenshot()
     {
         return actualScreenshot;
     }
-    public static Screenshot getExpectedScreenshot(String fileName)
+    public static Screenshot getExpectedScreenshot()
     {
         return expectedScreenshot;
     }
